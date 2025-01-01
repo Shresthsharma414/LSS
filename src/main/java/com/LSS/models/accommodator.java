@@ -24,6 +24,7 @@ public class accommodator {
 	private String acccommodatorAdhaarNumber;
 	private LocalDateTime DOB;
 	
+	
 	public accommodator(Long accommodatorID,String accommodatorName, String gender, String accommodatorFname, String accommodatorMail,
 			String accommodatorProfession, String accommodatorPhoneNumber, Long accomodatorID) {
 		super();
