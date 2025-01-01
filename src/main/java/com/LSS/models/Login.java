@@ -6,39 +6,64 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+
 @Entity
 @Table
-public class Forms {
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Form_Sequence")
-	@SequenceGenerator(name = "Form_Sequence", sequenceName = "Form_Sequence", allocationSize = 1)
-	private Long FormID ;
-	private String Form_name;
-	private Long moduleID;
-	public Forms() {
-		// TODO Auto-generated constructor stub
-	}
-	public String getForm_name() {
-		return Form_name;
-	}
-	public void setForm_name(String form_name) {
-		Form_name = form_name;
-	}
-	public Long getModuleID() {
-		return moduleID;
-	}
-	public void setModuleID(Long moduleID) {
-		this.moduleID = moduleID;
-	}
-	@Override
-	public String toString() {
-		return "Forms [FormID=" + FormID + ", Form_name=" + Form_name + ", moduleID=" + moduleID + "]";
-	}
-	public Forms( String form_name, Long moduleID) {
-		super();
-		
-		Form_name = form_name;
-		this.moduleID = moduleID;
-	}
+public class Login {
 
+    private String loginId;
+    private String password;
+    private Long authenticationId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Login_Sequence")
+    @SequenceGenerator(name = "Login_Sequence", sequenceName = "Login_Sequence", allocationSize = 1)
+    private Long id;
+
+    public Login(String loginId, String password, Long authenticationId) {
+        super();
+        this.loginId = loginId;
+        this.password = password;
+        this.authenticationId = authenticationId;
+    }
+
+    public Login() {}
+
+    @Override
+    public String toString() {
+        return "Login [loginId=" + loginId + ", password=" + password + ", authenticationId=" + authenticationId
+                + ", id=" + id + "]";
+    }
+
+    public String getLoginId() {
+        return loginId;
+    }
+
+    public void setLoginId(String loginId) {
+        this.loginId = loginId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Long getAuthenticationId() {
+        return authenticationId;
+    }
+
+    public void setAuthenticationId(Long authenticationId) {
+        this.authenticationId = authenticationId;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
