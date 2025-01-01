@@ -1,87 +1,44 @@
 package com.LSS.models;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-
 @Entity
 @Table
-public class Login {
-private String LoginId;
-<<<<<<< HEAD
-private String Password;
-private Long AuthenticationID;
-=======
-private String Password;	
-private String Authentication;
->>>>>>> dbfb524 (added accommodator model)
-@Id
-@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Login_Sequence")
-@SequenceGenerator(name = "Login_Sequence", sequenceName = "Login_Sequence", allocationSize = 1)
-private Long id ;
-<<<<<<< HEAD
-	public Login(String loginId, String password, Long authenticationID) {
-	super();
-	LoginId = loginId;
-	Password = password;
-	AuthenticationID = authenticationID;
-=======
-	public Login(String loginId, String password, String authentication) {
-	super();
-	LoginId = loginId;
-	Password = password;
-	Authentication = authentication;
->>>>>>> dbfb524 (added accommodator model)
-	
-}
+public class Forms {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Form_Sequence")
+	@SequenceGenerator(name = "Form_Sequence", sequenceName = "Form_Sequence", allocationSize = 1)
+	private Long FormID ;
+	private String Form_name;
+	private Long moduleID;
+	public Forms() {
+		// TODO Auto-generated constructor stub
+	}
+	public String getForm_name() {
+		return Form_name;
+	}
+	public void setForm_name(String form_name) {
+		Form_name = form_name;
+	}
+	public Long getModuleID() {
+		return moduleID;
+	}
+	public void setModuleID(Long moduleID) {
+		this.moduleID = moduleID;
+	}
 	@Override
 	public String toString() {
-<<<<<<< HEAD
-		return "Login [LoginId=" + LoginId + ", Password=" + Password + ", Authentication=" + AuthenticationID + ", id="
-=======
-		return "Login [LoginId=" + LoginId + ", Password=" + Password + ", Authentication=" + Authentication + ", id="
->>>>>>> dbfb524 (added accommodator model)
-				+ id + "]";
+		return "Forms [FormID=" + FormID + ", Form_name=" + Form_name + ", moduleID=" + moduleID + "]";
 	}
-	public Login() {
+	public Forms( String form_name, Long moduleID) {
+		super();
 		
+		Form_name = form_name;
+		this.moduleID = moduleID;
 	}
-	public String getLoginId() {
-		return LoginId;
-	}
-	public void setLoginId(String loginId) {
-		LoginId = loginId;
-	}
-	public String getPassword() {
-		return Password;
-	}
-	public void setPassword(String password) {
-		Password = password;
-	}
-<<<<<<< HEAD
-	public Long getAuthentication() {
-		return AuthenticationID;
-	}
-	public void setAuthentication(Long authentication) {
-		AuthenticationID = authentication;
-=======
-	public String getAuthentication() {
-		return Authentication;
-	}
-	public void setAuthentication(String authentication) {
-		Authentication = authentication;
->>>>>>> dbfb524 (added accommodator model)
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
 
 }
