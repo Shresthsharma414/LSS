@@ -1,4 +1,6 @@
 package com.LSS.models;
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +22,7 @@ public class accommodator {
 	private String accommodatorProfession;
 	private String accommodatorPhoneNumber;
 	private String acccommodatorAdhaarNumber;
+	private LocalDateTime DOB;
 	
 	public accommodator(Long accommodatorID,String accommodatorName, String gender, String accommodatorFname, String accommodatorMail,
 			String accommodatorProfession, String accommodatorPhoneNumber, Long accomodatorID) {
